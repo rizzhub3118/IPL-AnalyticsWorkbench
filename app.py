@@ -35,12 +35,13 @@ team_colors = {
 @st.cache_data
 def load_data():
     csv_path = "IPL.csv"
-    file_id = "1qUBz_zt1v0BUAgLjHndyFrXrR8_IzRaN"
+    url = "https://drive.google.com/uc?export=download&id=1AbCdEfGhIjKlMn"
 
     if not os.path.exists(csv_path):
         with st.spinner("Downloading IPL dataset (first time only)..."):
-            url = f"https://drive.google.com/uc?id={file_id}"
-            gdown.download(url, csv_path, quiet=False)
+            response = requests.get(url)
+            with open(csv_path, "wb") as f:
+                f.write(response.content)
 
     df = pd.read_csv(csv_path)
     
@@ -262,7 +263,3 @@ else:
         )
 
         st.plotly_chart(fig, use_container_width=True)
-
-
-
-
