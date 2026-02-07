@@ -145,23 +145,3 @@ This is a standard and intentional practice for projects involving large analyti
 
 ---
 
-## ▶️ How to Run Locally
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/<your-username>/ipl-analytics-workbench.git
-2.Navigate to the project directory:
-
-cd ipl-analytics-workbench
-
-3.Navigate to the project directory:
-
-cd ipl-analytics-workbench
-
-4.Install the required dependencies:
-
-pip install -r requirements.txt
-
-5.Run the application:
-
-streamlit run app.py
