@@ -32,7 +32,8 @@ team_colors = {
 # --------------------------------------------------
 @st.cache_data
 def load_data():
-    df = pd.read_csv("IPL.csv")
+    url = "https://drive.google.com/file/d/1qUBz_zt1v0BUAgLjHndyFrXrR8_IzRaN/view?usp=drive_link"
+    df = pd.read_csv(url)
     if "Unnamed: 0" in df.columns:
         df = df.drop(columns=["Unnamed: 0"])
     return df
@@ -251,3 +252,4 @@ else:
         )
 
         st.plotly_chart(fig, use_container_width=True)
+
